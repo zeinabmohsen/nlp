@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { getResponse } = require('./services/chatbotService');
+const chatbotRoutes = require('./routes/chatbotRoutes');
 
 const app = express();
 
@@ -9,33 +9,22 @@ app.use(express.json({ limit: '1mb' }));
 
 app.get('/', (_req, res) => {
   res.json({
-    message: 'مرحبا بك في واجهة الدردشة الزراعية العربية. استخدم POST /api/chat مع حقل message لطرح سؤالك.'
+    message: 'واجهة الإرشاد الزراعي اللبناني جاهزة. استخدم مسار /api/chat لإرسال أسئلتك.'
   });
 });
 
-app.post('/api/chat', (req, res) => {
-  const { message } = req.body || {};
-
-  if (!message || (typeof message === 'string' && !message.trim())) {
-    return res.status(400).json({
-      error: 'الرجاء إرسال رسالة نصية باللغة العربية في الحقل message.'
-    });
-  }
-
-  const response = getResponse(message);
-  return res.json(response);
-});
+app.use('/api/chat', chatbotRoutes);
 
 app.use((err, _req, res, _next) => {
-  console.error('حدث خطأ غير متوقع:', err);
-  res.status(500).json({ error: 'حدث خطأ غير متوقع. حاول مرة أخرى لاحقًا.' });
+  console.error('خطأ غير متوقع أثناء معالجة الطلب:', err);
+  res.status(500).json({ error: 'حدث خطأ غير متوقع أثناء معالجة الطلب. حاول مرة أخرى لاحقًا.' });
 });
 
 const PORT = process.env.PORT || 3000;
 
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`🚜  خادم الدردشة يعمل على المنفذ ${PORT}`);
+    console.log(`Agriculture advisory server listening on port ${PORT}`);
   });
 }
 
