@@ -7,44 +7,50 @@ const BASE_SUGGESTIONS = [
 const cropKnowledgeBase = [
   {
     name: 'القمح',
-    keywords: ['قمح'],
-    schedule: 'يزرع القمح في المناخات المعتدلة بدايةً من شهر نوفمبر وحتى ديسمبر في معظم مناطق الوطن العربي.',
-    tips: 'تأكد من توفر رطوبة كافية خلال مرحلة الإنبات وقلل الري بعد التفريع لمنع الإصابة بالأمراض الفطرية.'
+    keywords: ['قمح', 'القمح'],
+    schedule: 'يفضل زرع القمح في شهري نوفمبر وديسمبر في المناطق المعتدلة، وفي يناير بالمناطق الدافئة لضمان درجات حرارة مناسبة للإنبات.',
+    tips: 'احرص على خدمة التربة جيدًا قبل الزراعة، واستخدم بذورًا معتمدة، وراقب مواعيد الري الأولى بعد ظهور البادرات بنحو عشرة أيام.'
   },
   {
     name: 'الطماطم',
-    keywords: ['طماطم', 'بندوره', 'بندورة'],
-    schedule: 'يمكن زراعة الطماطم في عروات متعددة، ويُعد مارس-أبريل أفضل فترة للعروة الصيفية، بينما تبدأ العروة الخريفية في أغسطس.',
-    tips: 'اختر صنفاً مقاوماً للأمراض ورتب النباتات على مسافات 40-50 سم مع دعم جيد للسيقان.'
+    keywords: ['طماطم', 'الطماطم', 'بندوره', 'البندوره'],
+    schedule: 'يمكن زراعة الطماطم من فبراير إلى أبريل في الحقول المكشوفة، بينما تمتد الزراعة المحمية من أغسطس حتى أكتوبر لتجنب درجات الحرارة المرتفعة.',
+    tips: 'استخدم شتلات قوية، وراعِ التدرج في تعريضها للشمس قبل النقل للحقل، وراقب الرطوبة لتجنب تعفن الجذور.'
   },
   {
-    name: 'الزيتون',
-    keywords: ['زيتون'],
-    schedule: 'تُغرس شتلات الزيتون خلال فترتي الربيع أو الخريف مع مراعاة اعتدال الحرارة وتوفر الرطوبة في التربة.',
-    tips: 'احرص على التقليم السنوي الخفيف والتسميد العضوي لتحسين التهوية وإنتاجية الأشجار.'
+    name: 'الذرة',
+    keywords: ['ذره', 'الذره', 'ذرة', 'الذرة'],
+    schedule: 'أفضل وقت لزراعة الذرة هو من منتصف أبريل حتى نهاية مايو، ويمكن التبكير في المناطق الحارة أو التأخير قليلًا في المناطق الأبرد.',
+    tips: 'اهتم بتوفير ري منتظم في مرحلة التزهير وتكوين الحبوب، وتحكم في الحشائش مبكرًا لضمان نموٍ جيد للنبات.'
   }
 ];
 
 const resourceLibrary = [
   {
-    title: 'دليل الري بالتنقيط من منظمة الأغذية والزراعة',
-    url: 'https://www.fao.org/3/i1684a/i1684a.pdf'
-  },
-  {
-    title: 'بوابة الإرشاد الزراعي المصرية',
+    title: 'دليل وزارة الزراعة المصرية لخدمة المحاصيل الحقلية',
     url: 'https://www.agr-egypt.gov.eg/'
   },
   {
-    title: 'منصة المعرفة الزراعية السعودية (مكين)',
+    title: 'منصة الفاو للمعرفة الزراعية باللغة العربية',
+    url: 'https://www.fao.org/ar/home'
+  },
+  {
+    title: 'بوابة المعرفة الزراعية السعودية (مكن)',
     url: 'https://mekin.mewa.gov.sa/'
   }
 ];
 
-const irrigationAdvice = 'لتحسين كفاءة الري بالتنقيط، تأكد من اختبار جودة المياه، استخدم منظمات الضغط، وجدول الري بناءً على احتياجات المحصول ومرحلة نموه. قم بالصيانة الدورية للخطوط والمرشحات لتجنب الانسداد.';
+const irrigationAdvice = 'لري النباتات بفعالية، افحص رطوبة التربة قبل الري وتجنب الإغراق. اسقِ في الصباح الباكر أو المساء لتقليل الفاقد بالتبخر، ووزع المياه قرب منطقة الجذور. استخدم الري بالتنقيط أو الرش الخفيف للمحاصيل الحساسة، وقلل فترات الري في الشتاء مع إبقاء التربة رطبة دون تشبع.';
 
-const pestAdvice = 'للمكافحة المتكاملة للآفات، راقب الحقل بانتظام، استخدم المصائد الفيرمونية عند الحاجة، وفضل المبيدات الحيوية أو العضوية قبل اللجوء للمواد الكيميائية. حافظ على التنوع الحيوي والزراعة المصاحبة لتقليل انتشار الحشرات.';
+const pestAdvice = 'لإدارة الآفات، ابدأ بالمراقبة الدورية للنباتات وحدد نوع الإصابة مبكرًا. حافظ على نظافة الحقل وتخلص من بقايا النباتات المصابة، واستخدم المصائد أو المكافحة الحيوية حيثما أمكن. عند الحاجة إلى المبيدات، اختر النوع الموصى به والتزم بالجرعات وفترات الأمان المدونة على الملصق.';
 
 const ARABIC_DIACRITICS = /[\u064B-\u065F\u0670\u06D6-\u06ED]/g;
+
+const PLANTING_KEYWORDS = ['زراعه', 'ميعاد الزراعة', 'مواعيد الزراعة', 'موعد الزراعة', 'غرس', 'شتل'];
+const RESOURCE_KEYWORDS = ['مصادر', 'روابط', 'دليل', 'ارشادات', 'pdf', 'مراجع', 'المصادر'];
+const IRRIGATION_KEYWORDS = ['سقي', 'اسقي', 'ارو', 'الري', 'سقايه', 'سقاية', 'ارواء', 'مياه النباتات', 'تروي', 'ري'];
+const PEST_KEYWORDS = ['افات', 'افات النباتات', 'مكافحه', 'مكافحة', 'حشرات', 'مرض النباتات', 'امراض', 'حشرة'];
+const GREETING_KEYWORDS = ['مرحبا', 'السلام عليكم', 'اهلا', 'صباح الخير', 'مساء الخير', 'تحية'];
 
 function normalizeInput(text = '') {
   if (typeof text !== 'string') {
@@ -59,15 +65,14 @@ function normalizeInput(text = '') {
 
   normalized = normalized
     .replace(ARABIC_DIACRITICS, '')
-    .replace(/\u0640/g, '') // تطويل
-    .replace(/[إأآٱ]/g, 'ا')
+    .replace(/\u0640/g, '')
+    .replace(/[إأآا]/g, 'ا')
+    .replace(/ة/g, 'ه')
     .replace(/ى/g, 'ي')
     .replace(/ؤ/g, 'و')
-    .replace(/ئ/g, 'ي');
-
-  normalized = normalized
+    .replace(/ئ/g, 'ي')
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .replace(/[^\u0621-\u064a0-9\s]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -93,12 +98,12 @@ function handlePlantingSchedule(normalizedText) {
   const crop = findCrop(normalizedText);
 
   if (crop) {
-    const reply = `أفضل موعد لزراعة ${crop.name} هو: ${crop.schedule}\nنصيحة إضافية: ${crop.tips}`;
+    const reply = `بالنسبة لمحصول ${crop.name}: ${crop.schedule}\nنصيحة إضافية: ${crop.tips}`;
     return buildResponse({ intent: 'planting_schedule', reply, confidence: 0.92 });
   }
 
-  const reply = 'لم أتعرف على اسم المحصول، لكن القاعدة العامة أن تتم الزراعة في مواسم معتدلة مع مراعاة احتياجات التربة والري لكل محصول.';
-  return buildResponse({ intent: 'planting_schedule', reply, confidence: 0.65 });
+  const reply = 'يمكنك تحديد اسم المحصول الذي ترغب في معرفة مواعيد زراعته للحصول على تفاصيل أدق، مثل القمح أو الطماطم.';
+  return buildResponse({ intent: 'planting_schedule', reply, confidence: 0.6 });
 }
 
 function handleResources() {
@@ -111,19 +116,41 @@ function handleResources() {
 }
 
 function handleIrrigationAdvice() {
-  return buildResponse({ intent: 'irrigation_best_practices', reply: irrigationAdvice, confidence: 0.85 });
+  return buildResponse({ intent: 'irrigation_best_practices', reply: irrigationAdvice, confidence: 0.88 });
 }
 
 function handlePestManagement() {
-  return buildResponse({ intent: 'pest_management', reply: pestAdvice, confidence: 0.8 });
+  return buildResponse({ intent: 'pest_management', reply: pestAdvice, confidence: 0.82 });
 }
 
 function getFallbackResponse(messageProvided) {
   const reply = messageProvided
     ? 'لم أفهم سؤالك تمامًا. يمكنك مثلاً أن تسأل عن مواعيد زراعة محصول محدد أو أن تطلب روابط إرشادية حول موضوع زراعي.'
-    : 'مرحبًا! الرجاء كتابة سؤالك باللغة العربية حول موضوع زراعي لمساعدتك.';
+    : 'أهلًا بك! شاركني سؤالك الزراعي لأساعدك بالإجابات المناسبة.';
 
   return buildResponse({ intent: 'fallback', reply, confidence: 0.25 });
+}
+
+function textContainsAny(text, keywords) {
+  if (!text) {
+    return false;
+  }
+
+  const tokens = new Set(text.split(/\s+/));
+
+  return keywords.some((keyword) => {
+    const trimmed = keyword.trim();
+
+    if (!trimmed) {
+      return false;
+    }
+
+    if (trimmed.includes(' ')) {
+      return text.includes(trimmed);
+    }
+
+    return tokens.has(trimmed);
+  });
 }
 
 function detectIntent(normalizedText) {
@@ -131,29 +158,24 @@ function detectIntent(normalizedText) {
     return { handler: () => getFallbackResponse(false) };
   }
 
-  const containsPlanting = /(زراعه|زراعة|غرس|بذر|موعد|مواعيد|متى)/.test(normalizedText);
-  if (containsPlanting) {
-    return { handler: () => handlePlantingSchedule(normalizedText) };
-  }
-
-  const containsResourceKeywords = /(مصادر|رابط|روابط|دليل|مرجع|pdf|ملف|كتيب)/.test(normalizedText);
-  if (containsResourceKeywords) {
+  if (textContainsAny(normalizedText, RESOURCE_KEYWORDS)) {
     return { handler: handleResources };
   }
 
-  const containsIrrigation = /(افضل طرق الري|الري بالتنقيط|(?:^|\s)(?:ري|الري|سقي|تنقيط)(?:\s|$))/.test(normalizedText);
-  if (containsIrrigation) {
+  if (textContainsAny(normalizedText, IRRIGATION_KEYWORDS)) {
     return { handler: handleIrrigationAdvice };
   }
 
-  const containsPest = /(آفات|افات|حشرات|مكافحة|مبيد|حشره)/.test(normalizedText);
-  if (containsPest) {
+  if (textContainsAny(normalizedText, PEST_KEYWORDS)) {
     return { handler: handlePestManagement };
   }
 
-  const containsGreeting = /(مرحبا|اهلا|السلام عليكم|صباح الخير|مساء الخير)/.test(normalizedText);
-  if (containsGreeting) {
-    const reply = 'أهلاً بك! كيف يمكنني مساعدتك في استفسارات الزراعة اليوم؟';
+  if (textContainsAny(normalizedText, PLANTING_KEYWORDS) || findCrop(normalizedText)) {
+    return { handler: () => handlePlantingSchedule(normalizedText) };
+  }
+
+  if (textContainsAny(normalizedText, GREETING_KEYWORDS)) {
+    const reply = 'أهلًا وسهلًا! كيف يمكنني مساعدتك في سؤالك الزراعي اليوم؟';
     return { handler: () => buildResponse({ intent: 'greeting', reply, confidence: 0.7 }) };
   }
 
