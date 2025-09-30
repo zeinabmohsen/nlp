@@ -7,13 +7,14 @@
 } = require('../config/chatbotConfig');
 const { cropKnowledgeBase } = require('../data/crops');
 
-function buildResponse({ intent, reply, confidence, suggestions = BASE_SUGGESTIONS }) {
-  return {
-    intent,
-    reply,
-    confidence,
-    suggestions
-  };
+function buildResponse({ intent, reply, confidence, suggestions }) {
+  const response = { intent, reply, confidence };
+
+  if (Array.isArray(suggestions) && suggestions.length > 0) {
+    response.suggestions = suggestions;
+  }
+
+  return response;
 }
 
 function findCrop(normalizedText) {
@@ -76,7 +77,7 @@ function handleGratitudeGoodbye() {
 
 function buildGreetingResponse() {
   const reply = 'أهلًا وسهلًا! تشرفنا فيك، جاهز قدّم لك إرشادات الزراعة بلبنان . شو سؤالك؟';
-  return buildResponse({ intent: 'greeting', reply, confidence: 0.7 });
+  return buildResponse({ intent: 'greeting', reply, confidence: 0.7, suggestions: BASE_SUGGESTIONS });
 }
 
 function getFallbackResponse(messageProvided) {

@@ -13,7 +13,7 @@ describe('chatbotService', () => {
     expect(result.reply).toEqual(expect.stringContaining('القمح'));
     expect(result.reply).toEqual(expect.stringContaining('نصيحة لبنانية'));
     expect(result.confidence).toBeGreaterThan(0.9);
-    expect(result.suggestions).toHaveLength(3);
+    expect(result.suggestions).toBeUndefined();
   });
 
   test('suggests trusted resources when user asks for references', async () => {
