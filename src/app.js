@@ -1,6 +1,7 @@
-const express = require('express');
+﻿const express = require('express');
 const cors = require('cors');
 const chatbotRoutes = require('./routes/chatbotRoutes');
+const whatsappWebhook = require('./routes/whatsappWebhook');
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.get('/', (_req, res) => {
     message: 'واجهة الإرشاد الزراعي اللبناني جاهزة. استخدم مسار /api/chat لإرسال أسئلتك.'
   });
 });
+
+app.use('/webhooks/whatsapp', whatsappWebhook);
 
 app.use('/api/chat', chatbotRoutes);
 

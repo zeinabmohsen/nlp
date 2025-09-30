@@ -1,4 +1,4 @@
-const {
+﻿const {
   BASE_SUGGESTIONS,
   resourceLibrary,
   irrigationAdvice,

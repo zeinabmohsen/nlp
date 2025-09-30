@@ -1,4 +1,4 @@
-const { getResponse, normalizeInput } = require('../src/services/chatbotService');
+﻿const { getResponse, normalizeInput } = require('../src/services/chatbotService');
 const { getStats, resetStats } = require('../src/services/analytics');
 
 describe('chatbotService', () => {

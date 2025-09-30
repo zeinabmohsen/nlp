@@ -1,4 +1,4 @@
-const CORE_CROPS = [
+﻿const CORE_CROPS = [
   {
     name: 'القمح',
     keywords: ['قمح', 'القمح'],
