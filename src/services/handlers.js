@@ -75,7 +75,7 @@ function handleGratitudeGoodbye() {
 }
 
 function buildGreetingResponse() {
-  const reply = 'أهلًا وسهلًا! تشرفنا فيك، جاهز قدّم لك إرشادات الزراعة بلبنان سواء بدك جواب رسمي أو حكي على الطريقة اللبنانية. شو سؤالك؟';
+  const reply = 'أهلًا وسهلًا! تشرفنا فيك، جاهز قدّم لك إرشادات الزراعة بلبنان . شو سؤالك؟';
   return buildResponse({ intent: 'greeting', reply, confidence: 0.7 });
 }
 
