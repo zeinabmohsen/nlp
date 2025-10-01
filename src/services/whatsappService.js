@@ -91,7 +91,25 @@ async function sendTextMessage({ to, body }) {
 
   return dispatchWhatsAppMessage(payload);
 }
+
+async function alertAll(numbers, message, { delayMs = 0 } = {}) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Recipients list must be an array of phone numbers');
+  }
+
+  for (const number of numbers) {
+    await sendTextMessage({ to: number, body: message });
+
+    if (delayMs > 0) {
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+}
+
 module.exports = {
   sendTemplateMessage,
-  sendTextMessage
+  sendTextMessage,
+  alertAll
 };
+
+

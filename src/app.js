@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 
 const chatbotRoutes = require('./routes/chatbotRoutes');
+const alertRoutes = require('./routes/alertRoutes');
 const whatsappWebhook = require('./routes/whatsappWebhook');
 
 const app = express();
@@ -24,6 +25,7 @@ app.get('/', (_req, res) => {
 // Routes
 app.use('/webhooks/whatsapp', whatsappWebhook);
 app.use('/api/chat', chatbotRoutes);
+app.use('/api/alerts', alertRoutes);
 
 // Error handler
 app.use((err, _req, res, _next) => {
